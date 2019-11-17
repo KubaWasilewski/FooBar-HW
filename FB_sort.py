@@ -1,5 +1,6 @@
+import os
 name_of_file = input("give the name of the file ")
-file_path = "C:\\Users\\Kubaw\\Desktop\\coding\\Python\\elective\\FB homework\\"+name_of_file+".txt"
+file_path = os.path.dirname(os.path.realpath(__file__))+"\\"+name_of_file+".txt"
 txt_file = open(file_path,"r+")
 txt_data = str(txt_file.readline().strip(";"))
 lst = []
@@ -22,7 +23,7 @@ for number in lst:
         lst[lst.index(number)] = "NOT FB"
 txt_file.close()
 print(lst)
-ans_file_path = "C:\\Users\\Kubaw\\Desktop\\coding\\Python\\elective\\FB homework\\"+name_of_file+"_ans.txt"
+ans_file_path = os.path.dirname(os.path.realpath(__file__))+"\\"+name_of_file+"_ans.txt"
 ans_file = open(ans_file_path,"w+")
 for string in lst:
     ans_file.write(str(string)+";")
